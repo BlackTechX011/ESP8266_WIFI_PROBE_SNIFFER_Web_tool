@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ESP8266 WIFI PROBE SNIFFER Web tool</title>
+  <meta
+  name="description"
+  content="Easily allow users to install DeautherX firmware on the web."
+  />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="color-scheme" content="dark light" />
+
+  <style>
+  header{
+    background-color: #6EC1E4;
+    border-top: 1px solid #ccc;
+    padding-top: 24px;
+    text-align: center;
+
+  }
+  .logo {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    background: #2f3136;
+    color: #bfbfbb;
+    padding: 0.2em 1em;
+    border-radius: 3px;
+	  border-left: solid #0ba8cf 5px;
+    font-weight: 100;
+  }
+  footer{
+ 
+  }
+  body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, sans-serif;
+    padding: 0;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 12px;
+  }
+
+
+
+h2 {
+  margin-top: 2em;
+}
+h4 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  background: #2f3136;
+  color: #bfbfbb;
+  padding: 0.2em 1em;
+  border-radius: 3px;
+  border-left: solid #0ba8cf 5px;
+  font-weight: 100;
+}
+h1 {
+  font-size: 1.7rem;
+  margin-top: 1rem;
+  background: #2f3136;
+  color: #bfbfbb;
+  padding: 0.2em 1em;
+  border-radius: 3px;
+  border-left: solid #0ba8cf 5px;
+  font-weight: 100;
+}
+h5 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  background: #2f3136;
+  color: #bfbfbb;
+  padding: 0.2em 1em;
+  border-radius: 3px;
+  border-left: solid #0ba8cf 5px;
+  font-weight: 100;
+}
+
+td {
+  height: 9.5px;
+  vertical-align: left;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  background: #2f3136;
+  color: #bfbfbb;
+  border-radius: 1px;
+  border-left: solid #0ba8cf 5px;
+}
+h3 {
+  margin-top: 1.5em;
+}
+a {
+  color: #03a9f4;
+}
+.invisible {
+  visibility: hidden;
+}
+.hidden {
+  display: none;
+}
+esp-web-install-button[install-unsupported] {
+  visibility: inherit;
+}
+.content pre {
+  max-width: 100%;
+  overflow-y: scroll;
+}
+.footer {
+  margin-top: 24px;
+
+  padding-top: 24px;
+  text-align: center;
+}
+.footer .initiative {
+  font-style: italic;
+  margin-top: 16px;
+}
+table {
+  border-spacing:  0 15px;
+  display: table;
+
+}
+td, tr, th{
+  padding: 8px;
+  vertical-align:middle;
+
+}
+
+img{
+  width:150px;
+}
+
+
+.m{
+  grid-column: 1;
+  height: 220px;
+  width:300px;
+  text-align: center;
+}
+.s{
+  height: 200px;
+  width:300px;
+}
+
+.l{
+  width:180px;
+  height: 200px;
+
+}
+.explication{
+  width:auto;
+  height: auto;
+  padding: 20px;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #333;
+    color: #fff;
+  }
+  a {
+    color: #58a6ff;
+  }
+}
+</style>
+    <script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>
+  </head>
+  <body>
+    <div class="content">
+      <h1>ESP8266 WIFI PROBE SNIFFER Web tool</h1>
+      <ul class="radios">
+      <h4> <input type="radio" name="type" value="ESP8266 SNIFFER" /> ESP8266 SNIFFER  </h4>
+      </ul>
+     <p class="button-row" align="center"> <esp-web-install-button class="invisible"></esp-web-install-button> </p> 
+     <h5>How To Flash ESP8266 WIFI PROBE SNIFFER firmware to Esp8266 based boad</h5>
+     <ul>
+       <li>Select your esp8266 boad </li>
+       <li>Connect your ESP8266 board via USB</li>
+       <li>Click Connect and Select the serial port of your ESP</li>
+       <li>on Device Dashboard Click on install</li>
+    <script>
+      document.querySelectorAll('input[name="type"]').forEach(radio =>
+        radio.addEventListener("change", () => {
+          const button = document.querySelector('esp-web-install-button');
+          button.manifest = `./manifest_${radio.value}.json`;
+          button.classList.remove('invisible');
+        }
+      ));
+    </script>
+  </body>
+</html>
