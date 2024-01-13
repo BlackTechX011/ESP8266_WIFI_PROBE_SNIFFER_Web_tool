@@ -169,29 +169,29 @@ img{
   }
 }
 </style>
-    <script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>
-  </head>
-  <body>
-    <div class="content">
-      <h1>ESP8266 WIFI PROBE SNIFFER Web tool</h1>
-      <ul class="radios">
-      <h4> <input type="radio" name="type" value="ESP8266 SNIFFER" /> ESP8266 SNIFFER  </h4>
-      </ul>
-     <p class="button-row" align="center"> <esp-web-install-button class="invisible"></esp-web-install-button> </p> 
-     <h5>How To Flash ESP8266 WIFI PROBE SNIFFER firmware to Esp8266 based boad</h5>
-     <ul>
-       <li>Select your esp8266 boad </li>
-       <li>Connect your ESP8266 board via USB</li>
-       <li>Click Connect and Select the serial port of your ESP</li>
-       <li>on Device Dashboard Click on install</li>
-    <script>
-      document.querySelectorAll('input[name="type"]').forEach(radio =>
-        radio.addEventListener("change", () => {
-          const button = document.querySelector('esp-web-install-button');
-          button.manifest = `./manifest_${radio.value}.json`;
-          button.classList.remove('invisible');
-        }
-      ));
-    </script>
-  </body>
+<script type="module" src="https://unpkg.com/esp-web-tools@8.0.1/dist/web/install-button.js?module"></script>
+</head>
+<body>
+<div>
+<h1>ESP8266 WIFI PROBE SNIFFER Web tool</h1>
+<ul class="radios">
+<h4> <input type="radio" name="type" value="ESP8266 SNIFFER" /> ESP8266 SNIFFER  </h4>
+</ul>
+<p class="button-row" align="center"> <esp-web-install-button class="invisible"></esp-web-install-button> </p> 
+<h5>How To Flash ESP8266 WIFI PROBE SNIFFER firmware to Esp8266 based boad</h5>
+<ul>
+<li>Select your esp8266 boad </li>
+<li>Connect your ESP8266 board via USB</li>
+<li>Click Connect and Select the serial port of your ESP</li>
+<li>on Device Dashboard Click on install</li>
+<script>
+document.querySelectorAll('input[name="type"]').forEach(radio =>
+radio.addEventListener("change", () => {
+const button = document.querySelector('esp-web-install-button');
+button.manifest = `./manifest_${radio.value}.json`;
+button.classList.remove('invisible');
+}
+));
+</script>
+</body>
 </html>
